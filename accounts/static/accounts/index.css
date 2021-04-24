@@ -1,0 +1,15 @@
+.jumbotron {
+    background-image: url("https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg");
+    background-size: cover;
+}
+.jumbotron > p {
+    color:white;
+}
+.jumbotron > h1 {
+    color:white;
+}
+.features {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

@@ -1,0 +1,42 @@
+{% extends 'accounts/base.html' %} 
+{% load static %}
+
+{% block headers %} 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+{% endblock %}
+
+{% block content %} 
+
+<h1>Universities</h1>
+<hr>
+<div class="table-responsive">
+    <table id="university_list" class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>University</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for university in university_list %} 
+                <tr>
+                    <td>{{university.name}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'university:uniprofile' pk=university.pk %}" role="button">Link</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %} 
+<script>
+    $(document).ready( function () {
+        $('#university_list').DataTable();
+    } );
+</script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<script src="{% static 'university/index.js' %}"></script>
+{% endblock %}
