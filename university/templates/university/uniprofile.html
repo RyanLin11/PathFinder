@@ -1,0 +1,45 @@
+{% extends 'accounts/base.html' %} 
+{% load static %} 
+
+{% block headers %} 
+<link rel="stylesheet" type="text/css" href="{% static 'university/uniprofile.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4">{{university.name}}</h1>
+    <p class="lead">{{university.description}}</p>
+</div>
+<br>
+<div class="table-responsive">
+    <table id="program_list" class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Program</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for program in programs %} 
+                <tr>
+                    <td>{{program.name}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'university:program' program.pk %}" role="button">Link</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!--<rssapp-wall id="JorJQ83rjgmuDM53"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>-->
+{% endblock %} 
+
+{% block scripts %} 
+<script>
+    $(document).ready( function () {
+        $('#program_list').DataTable();
+    } );
+</script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<script src="{% static 'university/index.js' %}"></script>
+{% endblock %}

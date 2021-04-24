@@ -1,0 +1,8 @@
+.jumbotron {
+    background-image: url("https://www.mississauga.ca/wp-content/uploads/2020/08/24124149/kariya-park-banner.jpg");
+    background-size: cover;
+}
+
+.jumbotron > *{
+    color: white;
+}

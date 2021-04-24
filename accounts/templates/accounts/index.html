@@ -1,0 +1,52 @@
+{% extends 'accounts/base.html' %} 
+{% load static %}
+{% block headers %} 
+<link rel="stylesheet" href="{% static 'accounts/index.css' %}">
+{% endblock %}
+{% block content %} 
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4 text-center">One-Stop Site for Grade 12 Students</h1>
+    <p class="lead text-center">Keep track of your conditional offers, learn about upcoming events, know about university decisions.</p>
+    <hr class="my-4">
+    <p class="lead text-center">
+        <a class="btn btn-primary btn-lg" href="{% url 'accounts:register' %}" role="button">Sign Up</a>
+        <a class="btn btn-info btn-lg" href="{% url 'accounts:login' %}" role="button">Log In</a>
+    </p>
+</div>
+<h2 class="text-center">Features</h2>
+<div class="features">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://www.macworld.com/wp-content/uploads/2021/03/mac-calendar-icon-100723428-orig-5.jpg?quality=50&strip=all" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Events Planner</h5>
+            <p class="card-text">Keep track of upcoming events from the universities you applied to.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://www.clipartkey.com/mpngs/m/187-1878724_an-icon-representing-a-chart-with-an-arrow.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Tracking Decisions</h5>
+            <p class="card-text">Track which universities have given out offers, and the portfolio of people who have been admitted thus far.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://icons.iconarchive.com/icons/inipagi/job-seeker/512/conversation-icon.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Ask Me Anything</h5>
+            <p class="card-text">Chat with fellow applicants and alumni to help you make your decision.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://www.freeiconspng.com/thumbs/courses-icon/courses-icon-8.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Course Planning</h5>
+            <p class="card-text">Find out which courses are easiest to take in high school, and which ones your fellow applicants are most likely to take.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
