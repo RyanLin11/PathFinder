@@ -1,0 +1,15 @@
+{% extends 'accounts/base.html' %} 
+{% block content %} 
+<h1>My Courses</h1>
+<ol>
+{% for application in applications %} 
+<li>{{application.program}} - {{application.grade}}%</li>
+{% endfor %} 
+</ol>
+<h1>Add Courses</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_table}}
+    <button type='submit'>Add</button>
+</form>
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import University, Program
+from .models import University, Program, Application
+from django.forms import modelformset_factory
 
 # Create your views here.
 def index(request):
@@ -16,4 +17,5 @@ def uniprofile(request, pk):
 
 def program(request, pk):
     program = Program.objects.get(pk=pk)
-    return render(request, 'university/program.html', {'program':program})
+    applications = Application.objects.filter(program=program)
+    return render(request, 'university/program.html', {'program':program, 'applications':applications})

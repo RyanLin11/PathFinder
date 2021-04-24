@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class University(models.Model):
@@ -27,3 +28,6 @@ class Application(models.Model):
         (DEFERRED, 'Deferred'),
     ]
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=PENDING)
+    program = models.ForeignKey(Program, on_delete=models.CASCADE, default=None)
+    grade = models.IntegerField(default=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
