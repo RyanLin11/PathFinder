@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from .models import Profile
+#from university.models import Course
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 class CreateUserForm(UserCreationForm):
@@ -14,9 +15,15 @@ class ChangeUserForm(forms.ModelForm):
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control form-control-user', 'placeholder':'Last Name'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control form-control-user', 'placeholder':'Email Address'}))
     class Meta:
-        model = User
+        model = Profile
         fields = ['first_name', 'last_name', 'email']
-
+'''
+class ChangeCourseForm(forms.ModelForm):
+    courses = forms.ModelMultipleChoiceField(queryset=Course.objects.all())
+    class Meta:
+        model = User
+        fields = ['courses']
+'''
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control form-control-user', 'placeholder':'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control form-control-user', 'placeholder':'Password'}))

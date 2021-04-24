@@ -7,7 +7,7 @@
     <p class="lead">{{program.university.name}}</p>
 </div>
 <h1>Admissions Info</h1>
-<div class="card text-center">
+<!--<div class="card text-center">
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
@@ -30,5 +30,17 @@
     <div class="card-body">
         
     </div>
-</div>
+</div>-->
+<h1>Accepted</h1>
+<ol>
+    {% for application in applications %} 
+    <li>{{application.user}} - {{application.grade}}%</li>
+    {% endfor %}
+</ol>
+<h1>Pending</h1>
+<ol>
+    {% for application in applications %} 
+    <li>{{application.user}} - {{application.grade}}%</li>
+    {% endfor %}
+</ol>
 {% endblock %}
