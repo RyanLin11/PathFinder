@@ -1,1 +1,1 @@
-web: gunicorn pathfinder.wsgi
+web: gunicorn mysite.wsgi
